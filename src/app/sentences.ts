@@ -1,0 +1,17 @@
+export const sentences = [
+    'The quick brown fox jumps over the lazy dog.',
+    'A journey of a thousand miles begins with a single step.',
+    'Pack my box with five dozen liquor jugs.',
+    'How vexingly quick daft zebras jump!',
+    'Sphinx of black quartz, judge my vow.',
+    'The five boxing wizards jump quickly.',
+    'Jackdaws love my big sphinx of quartz.',
+    'The jay, pig, fox, zebra, and my wolves quack!',
+    'Waltz, nymph, for quick jigs vex Bud.',
+    'Glib jocks quiz nymph to vex dwarf.',
+    'Two driven jocks help fax my big quiz.',
+    'Quick zephyrs blow, vexing daft Jim.',
+    'The wizard quickly jinxed the gnomes before they vaporized.',
+    'A quivering Texas zombie fought republic linked jewelry.',
+    'Crazy Fredrick bought many very exquisite opal jewels.',
+  ];
