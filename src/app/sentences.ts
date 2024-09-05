@@ -14,4 +14,4 @@ export const sentences = [
     'The wizard quickly jinxed the gnomes before they vaporized, using his powerful magic to prevent their mischievous plans.',
     'A quivering Texas zombie fought republic linked jewelry thieves, protecting the valuable gems with undead determination.',
     'Crazy Fredrick bought many very exquisite opal jewels, spending his entire inheritance on the dazzling collection.',
-  ];
+];
