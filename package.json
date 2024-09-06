@@ -5,6 +5,7 @@
         "ng": "ng",
         "start": "ng serve",
         "build": "ng build",
+        "build:ci": "ng build --base-href /typing-practice/",
         "watch": "ng build --watch --configuration development"
     },
     "private": true,

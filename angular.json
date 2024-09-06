@@ -47,7 +47,6 @@
                         "polyfills": ["zone.js"],
                         "tsConfig": "tsconfig.app.json",
                         "inlineStyleLanguage": "scss",
-                        "baseHref": "/typing-practice/",
                         "assets": [
                             {
                                 "glob": "**/*",
