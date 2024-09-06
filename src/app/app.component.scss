@@ -67,11 +67,12 @@ input[type='checkbox'] {
 }
 
 .sentence {
-    font-size: 2.25rem; // Increased from 1.75rem to 2.25rem
+    font-size: 2.25rem;
     text-align: left;
-    letter-spacing: normal; // Changed from 0.0625rem to normal
+    letter-spacing: normal;
     margin-bottom: 1.25rem;
     line-height: 1.5;
+    font-family: sans-serif;
     white-space: pre-wrap;
     word-wrap: break-word;
 }
@@ -94,6 +95,4 @@ input {
     position: absolute;
     left: 0;
     right: 0;
-    width: 100%;
-    height: 100%;
 }

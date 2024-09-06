@@ -34,7 +34,6 @@ import { sentences } from './sentences';
 
             <button (click)="generateSentence()">New Sentence</button>
         </div>
-
         <router-outlet />
     `,
     styleUrls: ['./app.component.scss'],
