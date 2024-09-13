@@ -1,16 +1,10 @@
 :host {
-    font-family: Arial, sans-serif;
+    font-family: sans-serif;
     width: 80rem;
     max-width: 90%;
     margin: 0 auto;
     padding: 1.25rem;
     display: block;
-}
-
-h1 {
-    color: #333;
-    text-align: center;
-    font-size: 2rem;
 }
 
 .typing-practice {
@@ -21,60 +15,15 @@ h1 {
     position: relative;
 }
 
-p {
-    margin-bottom: 0.625rem;
-}
-
-textarea {
-    width: 100%;
-    margin-bottom: 0.625rem;
-    padding: 0.625rem;
-    border: 0.0625rem solid #ccc;
-    border-radius: 0.25rem;
-    resize: vertical;
-}
-
-select,
-button {
-    padding: 0.5rem 0.75rem;
-    margin-top: 0.625rem;
-    border: none;
-    border-radius: 0.25rem;
-    background-color: #4caf50;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-select:hover,
-button:hover {
-    background-color: #45a049;
-}
-
-select {
-    background-color: #fff;
-    color: #333;
-    border: 0.0625rem solid #ccc;
-}
-
-label {
-    display: inline-block;
-    margin-right: 0.9375rem;
-}
-
-input[type='checkbox'] {
-    margin-right: 0.3125rem;
-}
-
 .sentence {
     font-size: 2.25rem;
     text-align: left;
-    letter-spacing: normal;
     margin-bottom: 1.25rem;
-    line-height: 1.5;
-    font-family: sans-serif;
+    line-height: 1.2;
+    font-family: monospace;
     white-space: pre-wrap;
     word-wrap: break-word;
+    letter-spacing: -10px;
 }
 
 .correct {
@@ -95,4 +44,19 @@ input {
     position: absolute;
     left: 0;
     right: 0;
+}
+
+button {
+    padding: 0.5rem 0.75rem;
+    margin-top: 0.625rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
 }

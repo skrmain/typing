@@ -9,20 +9,19 @@ import { sentences } from './sentences';
     standalone: true,
     imports: [RouterOutlet, ReactiveFormsModule, CommonModule],
     template: `
-        <h1>Welcome to {{ title }}!</h1>
-
         <div class="typing-practice">
-            <p class="sentence">
+            <p class="sentence" (click)="inputElement.focus()">
                 <span
                     *ngFor="let char of currentSentence.split(''); let i = index"
                     [class.correct]="userInput.value?.[i] === char"
                     [class.incorrect]="userInput.value?.[i] && userInput.value?.[i] !== char"
-                    [class.current]="i === userInput.value?.length"
+                    [class.current]="i === userInput.value?.length && document.activeElement === inputElement"
                 >
                     {{ char }}
                 </span>
             </p>
             <input
+                #inputElement
                 [formControl]="userInput"
                 (input)="onInput()"
                 (keydown)="onKeyDown($event)"
@@ -39,14 +38,12 @@ import { sentences } from './sentences';
     styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-    title = 'Typing Practice';
     currentSentence = '';
+    document = document;
     userInput = new FormControl('');
     typingSpeed = 0;
     accuracy = 100;
     startTime: number | null = null;
-
-    constructor() {}
 
     ngOnInit() {
         this.generateSentence();
