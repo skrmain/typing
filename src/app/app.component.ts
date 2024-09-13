@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -9,31 +9,34 @@ import { sentences } from './sentences';
     standalone: true,
     imports: [RouterOutlet, ReactiveFormsModule, CommonModule],
     template: `
-        <div class="typing-practice">
-            <p class="sentence" (click)="inputElement.focus()">
-                <span
-                    *ngFor="let char of currentSentence.split(''); let i = index"
-                    [class.correct]="userInput.value?.[i] === char"
-                    [class.incorrect]="userInput.value?.[i] && userInput.value?.[i] !== char"
-                    [class.current]="i === userInput.value?.length && document.activeElement === inputElement"
-                >
-                    {{ char }}
-                </span>
-            </p>
-            <input
-                #inputElement
-                [formControl]="userInput"
-                (input)="onInput()"
-                (keydown)="onKeyDown($event)"
-                [attr.maxlength]="currentSentence.length"
-                autofocus
-            />
-            <p>Speed: {{ typingSpeed }} WPM</p>
-            <p>Accuracy: {{ accuracy }}%</p>
+        <div [ngClass]="{ 'dark-theme': isDarkTheme }">
+            <div class="typing-practice" [ngClass]="{ 'dark-theme': isDarkTheme }">
+                <p class="sentence" (click)="inputElement.focus()">
+                    <span
+                        *ngFor="let char of currentSentence.split(''); let i = index"
+                        [class.correct]="userInput.value?.[i] === char"
+                        [class.incorrect]="userInput.value?.[i] && userInput.value?.[i] !== char"
+                        [class.current]="i === userInput.value?.length && document.activeElement === inputElement"
+                    >
+                        {{ char }}
+                    </span>
+                </p>
+                <input
+                    #inputElement
+                    [formControl]="userInput"
+                    (input)="onInput()"
+                    (keydown)="onKeyDown($event)"
+                    [attr.maxlength]="currentSentence.length"
+                    autofocus
+                />
+                <p>Speed: {{ typingSpeed }} WPM</p>
+                <p>Accuracy: {{ accuracy }}%</p>
 
-            <button (click)="generateSentence()">New Sentence</button>
+                <button (click)="generateSentence()">New Sentence</button>
+                <button (click)="toggleTheme()">Toggle Theme</button>
+            </div>
+            <router-outlet />
         </div>
-        <router-outlet />
     `,
     styleUrls: ['./app.component.scss'],
 })
@@ -44,6 +47,9 @@ export class AppComponent implements OnInit {
     typingSpeed = 0;
     accuracy = 100;
     startTime: number | null = null;
+    isDarkTheme = false;
+
+    constructor(private renderer: Renderer2) {}
 
     ngOnInit() {
         this.generateSentence();
@@ -81,6 +87,15 @@ export class AppComponent implements OnInit {
             this.userInput.setValue(currentValue.slice(0, -1), { emitEvent: false });
             this.onInput(); // Manually trigger input handling
             event.preventDefault();
+        }
+    }
+
+    toggleTheme() {
+        this.isDarkTheme = !this.isDarkTheme;
+        if (this.isDarkTheme) {
+            this.renderer.addClass(document.body, 'dark-theme');
+        } else {
+            this.renderer.removeClass(document.body, 'dark-theme');
         }
     }
 }

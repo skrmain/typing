@@ -5,14 +5,44 @@
     margin: 0 auto;
     padding: 1.25rem;
     display: block;
+    background-color: #f0f0f0;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+
+    &.dark-theme {
+        background-color: #1a1a1a;
+        color: #f0f0f0;
+    }
 }
 
 .typing-practice {
-    background-color: #f5f5f5;
+    background-color: #ffffff;
+    color: #333;
     border-radius: 0.5rem;
     padding: 1.25rem;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
     position: relative;
+    transition: background-color 0.3s, color 0.3s;
+
+    &.dark-theme {
+        background-color: #2a2a2a;
+        color: #f0f0f0;
+
+        .sentence {
+            .correct {
+                color: #66bb6a;
+            }
+
+            .incorrect {
+                color: #ef5350;
+            }
+
+            .current {
+                background-color: #ffd54f;
+                color: #333;
+            }
+        }
+    }
 }
 
 .sentence {
@@ -27,16 +57,16 @@
 }
 
 .correct {
-    color: green;
+    color: #4caf50;
 }
 
 .incorrect {
-    color: red;
+    color: #f44336;
     text-decoration: underline;
 }
 
 .current {
-    background-color: yellow;
+    background-color: #ffeb3b;
 }
 
 input {
@@ -51,12 +81,21 @@ button {
     margin-top: 0.625rem;
     border: none;
     border-radius: 0.25rem;
-    background-color: #4caf50;
-    color: white;
+    background-color: #3f51b5;
+    color: #ffffff;
     cursor: pointer;
     transition: background-color 0.3s;
-}
 
-button:hover {
-    background-color: #45a049;
+    &:hover {
+        background-color: #303f9f;
+    }
+
+    .dark-theme & {
+        background-color: #7986cb;
+        color: #ffffff;
+
+        &:hover {
+            background-color: #5c6bc0;
+        }
+    }
 }
