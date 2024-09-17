@@ -10,7 +10,7 @@ import { sentences } from './sentences';
     imports: [RouterOutlet, ReactiveFormsModule, CommonModule],
     template: `
         <div [ngClass]="{ 'dark-theme': isDarkTheme }">
-            <div class="typing-practice" [ngClass]="{ 'dark-theme': isDarkTheme }">
+            <div class="typing" [ngClass]="{ 'dark-theme': isDarkTheme }">
                 <p class="sentence" (click)="inputElement.focus()">
                     <span
                         *ngFor="let char of currentSentence.split(''); let i = index"

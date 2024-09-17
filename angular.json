@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "typing-practice": {
+        "typing": {
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:component": {
@@ -41,7 +41,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:application",
                     "options": {
-                        "outputPath": "dist/typing-practice",
+                        "outputPath": "dist/typing",
                         "index": "src/index.html",
                         "browser": "src/main.ts",
                         "polyfills": ["zone.js"],
@@ -84,10 +84,10 @@
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "configurations": {
                         "production": {
-                            "buildTarget": "typing-practice:build:production"
+                            "buildTarget": "typing:build:production"
                         },
                         "development": {
-                            "buildTarget": "typing-practice:build:development"
+                            "buildTarget": "typing:build:development"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -97,5 +97,8 @@
                 }
             }
         }
+    },
+    "cli": {
+      "analytics": false
     }
 }

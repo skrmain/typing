@@ -1,11 +1,11 @@
 {
-    "name": "typing-practice",
+    "name": "typing",
     "version": "0.0.0",
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
         "build": "ng build",
-        "build:ci": "ng build --base-href /typing-practice/",
+        "build:ci": "ng build --base-href /typing/",
         "watch": "ng build --watch --configuration development"
     },
     "private": true,

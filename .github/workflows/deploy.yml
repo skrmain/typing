@@ -35,7 +35,7 @@ jobs:
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
               with:
-                  path: 'dist/typing-practice/browser'
+                  path: 'dist/typing/browser'
 
             - name: Deploy to GitHub Pages
               id: deployment
