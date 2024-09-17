@@ -1,1 +1,1 @@
-# typing-practice
+# typing
